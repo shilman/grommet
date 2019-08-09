@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction, Car } from 'grommet-icons';
 
 import { Grommet, Anchor, Box, Button, Grid, Text } from '..';
@@ -239,11 +238,48 @@ const ElevationBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module)
-  .add('Simple Box', () => <SimpleBox />)
-  .add('Custom color', () => <CustomColorBox />)
-  .add('Fixed sizes', () => <FixedSizesBox />)
-  .add('Border', () => <BorderBox />)
-  .add('Round', () => <RoundBox />)
-  .add('Background', () => <BackgroundBox />)
-  .add('Elevation', () => <ElevationBox />);
+export default {
+  title: 'Box',
+};
+
+export const simpleBox = () => <SimpleBox />;
+
+simpleBox.story = {
+  name: 'Simple Box',
+};
+
+export const customColor = () => <CustomColorBox />;
+
+customColor.story = {
+  name: 'Custom color',
+};
+
+export const fixedSizes = () => <FixedSizesBox />;
+
+fixedSizes.story = {
+  name: 'Fixed sizes',
+};
+
+export const border = () => <BorderBox />;
+
+border.story = {
+  name: 'Border',
+};
+
+export const round = () => <RoundBox />;
+
+round.story = {
+  name: 'Round',
+};
+
+export const background = () => <BackgroundBox />;
+
+background.story = {
+  name: 'Background',
+};
+
+export const elevation = () => <ElevationBox />;
+
+elevation.story = {
+  name: 'Elevation',
+};

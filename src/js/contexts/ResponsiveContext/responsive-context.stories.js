@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { deepMerge } from 'grommet/utils';
 import { grommet } from 'grommet/themes';
@@ -84,16 +83,28 @@ const ResponsiveGridExample = () => (
   </Grommet>
 );
 
-storiesOf('ResponsiveContext', module)
-  .add('Custom Breakpoints', () => (
-    <Grommet theme={customBreakpoints} full>
-      <ResponsiveContext.Consumer>
-        {size => (
-          <Box fill background="brand">
-            <Heading>{`Hi, I'm ${size}, resize me!`}</Heading>
-          </Box>
-        )}
-      </ResponsiveContext.Consumer>
-    </Grommet>
-  ))
-  .add('Responsive Grid', () => <ResponsiveGridExample />);
+export default {
+  title: 'ResponsiveContext',
+};
+
+export const customBreakpointsStory = () => (
+  <Grommet theme={customBreakpoints} full>
+    <ResponsiveContext.Consumer>
+      {size => (
+        <Box fill background="brand">
+          <Heading>{`Hi, I'm ${size}, resize me!`}</Heading>
+        </Box>
+      )}
+    </ResponsiveContext.Consumer>
+  </Grommet>
+);
+
+customBreakpointsStory.story = {
+  name: 'Custom Breakpoints',
+};
+
+export const responsiveGrid = () => <ResponsiveGridExample />;
+
+responsiveGrid.story = {
+  name: 'Responsive Grid',
+};

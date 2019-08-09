@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Heading, Paragraph, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -129,7 +128,24 @@ const Large = () => (
   </Grommet>
 );
 
-storiesOf('Typography', module)
-  .add('Small', () => <Small />)
-  .add('Medium', () => <Medium />)
-  .add('Large', () => <Large />);
+export default {
+  title: 'Typography',
+};
+
+export const small = () => <Small />;
+
+small.story = {
+  name: 'Small',
+};
+
+export const medium = () => <Medium />;
+
+medium.story = {
+  name: 'Medium',
+};
+
+export const large = () => <Large />;
+
+large.story = {
+  name: 'Large',
+};

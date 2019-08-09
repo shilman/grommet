@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { FormDown, FormNext, Notification } from 'grommet-icons';
 
@@ -198,7 +197,24 @@ class HorizontalCollapsible extends Component {
   }
 }
 
-storiesOf('Collapsible', module)
-  .add('Default', () => <SimpleCollapsible />)
-  .add('Nested', () => <NestedCollapsible />)
-  .add('Horizontal', () => <HorizontalCollapsible />);
+export default {
+  title: 'Collapsible',
+};
+
+export const defaultStory = () => <SimpleCollapsible />;
+
+defaultStory.story = {
+  name: 'Default',
+};
+
+export const nested = () => <NestedCollapsible />;
+
+nested.story = {
+  name: 'Nested',
+};
+
+export const horizontal = () => <HorizontalCollapsible />;
+
+horizontal.story = {
+  name: 'Horizontal',
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
 import { Grommet, Box, Carousel } from 'grommet';
@@ -22,7 +21,18 @@ const SimpleCarousel = ({ initialChild }) => (
   </Grommet>
 );
 
-storiesOf('Carousel', module).add('Simple', () => <SimpleCarousel />);
-storiesOf('Carousel', module).add('Initial child`', () => (
-  <SimpleCarousel initialChild={1} />
-));
+export default {
+  title: 'Carousel',
+};
+
+export const simple = () => <SimpleCarousel />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const initialChild = () => <SimpleCarousel initialChild={1} />;
+
+initialChild.story = {
+  name: 'Initial child`',
+};

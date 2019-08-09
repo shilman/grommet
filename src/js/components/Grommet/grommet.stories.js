@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Grommet, Anchor, Box } from 'grommet';
 import { Add } from 'grommet-icons';
@@ -48,7 +47,24 @@ const GrommetVars = () => (
   </Grommet>
 );
 
-storiesOf('Grommet', module)
-  .add('Plain', () => <Plain />)
-  .add('Theme', () => <Themed />)
-  .add('Vars', () => <GrommetVars />);
+export default {
+  title: 'Grommet',
+};
+
+export const plain = () => <Plain />;
+
+plain.story = {
+  name: 'Plain',
+};
+
+export const theme = () => <Themed />;
+
+theme.story = {
+  name: 'Theme',
+};
+
+export const vars = () => <GrommetVars />;
+
+vars.story = {
+  name: 'Vars',
+};

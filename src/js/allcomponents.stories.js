@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Grommet,
@@ -350,4 +349,12 @@ class Components extends Component {
   }
 }
 
-storiesOf('Components', module).add('All', () => <Components />);
+export default {
+  title: 'AllComponents',
+};
+
+export const all = () => <Components />;
+
+all.story = {
+  name: 'All',
+};

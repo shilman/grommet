@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Button, Grid, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -99,7 +98,24 @@ const NColumnGrid = () => (
   </Grommet>
 );
 
-storiesOf('Grid', module)
-  .add('App', () => <AppGrid />)
-  .add('Percentages', () => <Percentages />)
-  .add('N-column layout', () => <NColumnGrid />);
+export default {
+  title: 'Grid',
+};
+
+export const app = () => <AppGrid />;
+
+app.story = {
+  name: 'App',
+};
+
+export const percentages = () => <Percentages />;
+
+percentages.story = {
+  name: 'Percentages',
+};
+
+export const nColumnLayout = () => <NColumnGrid />;
+
+nColumnLayout.story = {
+  name: 'N-column layout',
+};

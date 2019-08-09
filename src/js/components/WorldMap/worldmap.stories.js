@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -23,4 +22,12 @@ class SimpleWorldMap extends Component {
   }
 }
 
-storiesOf('WorldMap', module).add('Simple', () => <SimpleWorldMap />);
+export default {
+  title: 'WorldMap',
+};
+
+export const simple = () => <SimpleWorldMap />;
+
+simple.story = {
+  name: 'Simple',
+};

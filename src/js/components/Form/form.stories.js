@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -75,4 +74,12 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('All', () => <Example />);
+export default {
+  title: 'Form',
+};
+
+export const all = () => <Example />;
+
+all.story = {
+  name: 'All',
+};

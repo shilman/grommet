@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { css } from 'styled-components';
 
 import {
@@ -487,11 +486,48 @@ const ScrollableTabs = () => (
   </Grommet>
 );
 
-storiesOf('Tabs', module)
-  .add('Uncontrolled', () => <UncontrolledTabs />)
-  .add('Controlled', () => <ControlledTabs />)
-  .add('Responsive', () => <ResponsiveTabs />)
-  .add('Rich', () => <RichTabs />)
-  .add('Custom Theme', () => <CustomTabs />)
-  .add('Scrollable', () => <ScrollableTabs />)
-  .add('Plain', () => <UncontrolledTabs plain />);
+export default {
+  title: 'Tabs',
+};
+
+export const uncontrolled = () => <UncontrolledTabs />;
+
+uncontrolled.story = {
+  name: 'Uncontrolled',
+};
+
+export const controlled = () => <ControlledTabs />;
+
+controlled.story = {
+  name: 'Controlled',
+};
+
+export const responsive = () => <ResponsiveTabs />;
+
+responsive.story = {
+  name: 'Responsive',
+};
+
+export const rich = () => <RichTabs />;
+
+rich.story = {
+  name: 'Rich',
+};
+
+export const customThemeStory = () => <CustomTabs />;
+
+customThemeStory.story = {
+  name: 'Custom Theme',
+};
+
+export const scrollable = () => <ScrollableTabs />;
+
+scrollable.story = {
+  name: 'Scrollable',
+};
+
+export const plain = () => <UncontrolledTabs plain />;
+
+plain.story = {
+  name: 'Plain',
+};

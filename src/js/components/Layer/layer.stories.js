@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Add, Close, FormClose, StatusGood, Trash } from 'grommet-icons';
 
@@ -445,16 +444,68 @@ const ScrollBodyLayer = () => (
   </Grommet>
 );
 
-storiesOf('Layer', module)
-  .add('Center', () => <CenterLayer />)
-  .add('Corner', () => <CornerLayer />)
-  .add('Form', () => <FormLayer />)
-  .add('Notification', () => <NotificationLayer />)
-  .add('Margin', () => <MarginLayer full />)
-  .add('Margin (Center)', () => <MarginLayer margin="large" />)
-  .add('Margin Top (Center)', () => (
-    <MarginLayer margin={{ top: 'large' }} position="top" />
-  ))
-  .add('Plain', () => <PlainLayer />)
-  .add('Full', () => <FullLayer />)
-  .add('Fixed Header, Scroll Body', () => <ScrollBodyLayer />);
+export default {
+  title: 'Layer',
+};
+
+export const center = () => <CenterLayer />;
+
+center.story = {
+  name: 'Center',
+};
+
+export const corner = () => <CornerLayer />;
+
+corner.story = {
+  name: 'Corner',
+};
+
+export const form = () => <FormLayer />;
+
+form.story = {
+  name: 'Form',
+};
+
+export const notification = () => <NotificationLayer />;
+
+notification.story = {
+  name: 'Notification',
+};
+
+export const margin = () => <MarginLayer full />;
+
+margin.story = {
+  name: 'Margin',
+};
+
+export const marginCenter = () => <MarginLayer margin="large" />;
+
+marginCenter.story = {
+  name: 'Margin (Center)',
+};
+
+export const marginTopCenter = () => (
+  <MarginLayer margin={{ top: 'large' }} position="top" />
+);
+
+marginTopCenter.story = {
+  name: 'Margin Top (Center)',
+};
+
+export const plain = () => <PlainLayer />;
+
+plain.story = {
+  name: 'Plain',
+};
+
+export const full = () => <FullLayer />;
+
+full.story = {
+  name: 'Full',
+};
+
+export const fixedHeaderScrollBody = () => <ScrollBodyLayer />;
+
+fixedHeaderScrollBody.story = {
+  name: 'Fixed Header, Scroll Body',
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { base } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -22,6 +21,12 @@ const CustomDefaultProps = () => (
   </Box>
 );
 
-storiesOf('Components', module).add('Default Theme', () => (
-  <CustomDefaultProps />
-));
+export default {
+  title: 'DefaultThemeComponents',
+};
+
+export const defaultTheme = () => <CustomDefaultProps />;
+
+defaultTheme.story = {
+  name: 'Default Theme',
+};

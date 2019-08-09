@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { Close, FormDown } from 'grommet-icons';
 
 import {
@@ -131,7 +130,24 @@ class UserMenuDropButton extends Component {
   }
 }
 
-storiesOf('DropButton', module)
-  .add('Simple', () => <SimpleDropButton />)
-  .add('Calendar', () => <CalendarDropButton />)
-  .add('UserMenu', () => <UserMenuDropButton />);
+export default {
+  title: 'DropButton',
+};
+
+export const simple = () => <SimpleDropButton />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const calendar = () => <CalendarDropButton />;
+
+calendar.story = {
+  name: 'Calendar',
+};
+
+export const userMenu = () => <UserMenuDropButton />;
+
+userMenu.story = {
+  name: 'UserMenu',
+};

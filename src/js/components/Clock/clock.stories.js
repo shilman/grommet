@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Clock } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -54,7 +53,24 @@ const CustomAnalogClock = () => (
   </Grommet>
 );
 
-storiesOf('Clock', module)
-  .add('Digital', () => <DigitalClock />)
-  .add('Analog', () => <AnalogClock />)
-  .add('Custom Analog', () => <CustomAnalogClock />);
+export default {
+  title: 'Clock',
+};
+
+export const digital = () => <DigitalClock />;
+
+digital.story = {
+  name: 'Digital',
+};
+
+export const analog = () => <AnalogClock />;
+
+analog.story = {
+  name: 'Analog',
+};
+
+export const customAnalog = () => <CustomAnalogClock />;
+
+customAnalog.story = {
+  name: 'Custom Analog',
+};

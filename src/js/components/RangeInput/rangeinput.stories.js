@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -66,6 +65,18 @@ class CustomRangeInput extends Component {
   }
 }
 
-storiesOf('RangeInput', module)
-  .add('Simple', () => <SimpleRangeInput />)
-  .add('Custom', () => <CustomRangeInput />);
+export default {
+  title: 'RangeInput',
+};
+
+export const simple = () => <SimpleRangeInput />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const custom = () => <CustomRangeInput />;
+
+custom.story = {
+  name: 'Custom',
+};

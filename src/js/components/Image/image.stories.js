@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Image } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -52,8 +51,30 @@ const Opacity = () => (
   </Grommet>
 );
 
-storiesOf('Image', module)
-  .add('Simple', () => <Simple />)
-  .add('Fit', () => <Fit />)
-  .add('Fallback', () => <Fallback />)
-  .add('Opacity', () => <Opacity />);
+export default {
+  title: 'Image',
+};
+
+export const simple = () => <Simple />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const fit = () => <Fit />;
+
+fit.story = {
+  name: 'Fit',
+};
+
+export const fallback = () => <Fallback />;
+
+fallback.story = {
+  name: 'Fallback',
+};
+
+export const opacity = () => <Opacity />;
+
+opacity.story = {
+  name: 'Opacity',
+};

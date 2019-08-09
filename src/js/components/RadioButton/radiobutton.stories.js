@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Grommet, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -121,8 +120,31 @@ class CheckBoxInsideButton extends Component {
     );
   }
 }
-storiesOf('RadioButton', module)
-  .add('Simple', () => <SimpleRadioButton />)
-  .add('Disabled', () => <SimpleRadioButton disabled selected="c2" />)
-  .add('Custom Theme', () => <CustomRadioButton />)
-  .add('Inside a Button Theme', () => <CheckBoxInsideButton />);
+
+export default {
+  title: 'RadioButton',
+};
+
+export const simple = () => <SimpleRadioButton />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const disabled = () => <SimpleRadioButton disabled selected="c2" />;
+
+disabled.story = {
+  name: 'Disabled',
+};
+
+export const customThemeStory = () => <CustomRadioButton />;
+
+customThemeStory.story = {
+  name: 'Custom Theme',
+};
+
+export const insideAButtonTheme = () => <CheckBoxInsideButton />;
+
+insideAButtonTheme.story = {
+  name: 'Inside a Button Theme',
+};

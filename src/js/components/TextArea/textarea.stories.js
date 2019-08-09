@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -72,8 +71,30 @@ class FillTextArea extends Component {
   }
 }
 
-storiesOf('TextArea', module)
-  .add('Simple', () => <SimpleTextArea resize />)
-  .add('Fill', () => <FillTextArea />)
-  .add('Themed', () => <ThemedTextArea />)
-  .add('Non resizable', () => <SimpleTextArea resize={false} />);
+export default {
+  title: 'TextArea',
+};
+
+export const simple = () => <SimpleTextArea resize />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const fill = () => <FillTextArea />;
+
+fill.story = {
+  name: 'Fill',
+};
+
+export const themed = () => <ThemedTextArea />;
+
+themed.story = {
+  name: 'Themed',
+};
+
+export const nonResizable = () => <SimpleTextArea resize={false} />;
+
+nonResizable.story = {
+  name: 'Non resizable',
+};

@@ -1,5 +1,4 @@
 import React, { Component, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { FormLock, View } from 'grommet-icons';
 
 import { Box, Grommet, TextInput, Button } from 'grommet';
@@ -156,8 +155,30 @@ class ThemedTextInput extends Component {
   }
 }
 
-storiesOf('TextInput', module)
-  .add('Simple', () => <SimpleTextInput />)
-  .add('Password', () => <PasswordInput />)
-  .add('Suggestions', () => <SuggestionsTextInput />)
-  .add('Themed', () => <ThemedTextInput />);
+export default {
+  title: 'TextInput',
+};
+
+export const simple = () => <SimpleTextInput />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const password = () => <PasswordInput />;
+
+password.story = {
+  name: 'Password',
+};
+
+export const suggestionsStory = () => <SuggestionsTextInput />;
+
+suggestionsStory.story = {
+  name: 'Suggestions',
+};
+
+export const themed = () => <ThemedTextInput />;
+
+themed.story = {
+  name: 'Themed',
+};

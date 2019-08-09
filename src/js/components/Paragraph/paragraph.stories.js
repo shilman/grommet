@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -23,4 +22,12 @@ const All = () => (
   </Grommet>
 );
 
-storiesOf('Paragraph', module).add('All', () => <All />);
+export default {
+  title: 'Paragraph',
+};
+
+export const all = () => <All />;
+
+all.story = {
+  name: 'All',
+};

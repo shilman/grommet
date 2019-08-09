@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Meter, Text, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -277,10 +276,42 @@ class ControlledDataTable extends Component {
   }
 }
 
-storiesOf('DataTable', module)
-  .add('Simple', () => <SimpleDataTable />)
-  .add('Sized', () => <SizedDataTable />)
-  .add('Tunable', () => <TunableDataTable />)
-  .add('Grouped', () => <GroupedDataTable />)
-  .add('Served', () => <ServedDataTable />)
-  .add('Controlled', () => <ControlledDataTable />);
+export default {
+  title: 'DataTable',
+};
+
+export const simple = () => <SimpleDataTable />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const sized = () => <SizedDataTable />;
+
+sized.story = {
+  name: 'Sized',
+};
+
+export const tunable = () => <TunableDataTable />;
+
+tunable.story = {
+  name: 'Tunable',
+};
+
+export const grouped = () => <GroupedDataTable />;
+
+grouped.story = {
+  name: 'Grouped',
+};
+
+export const served = () => <ServedDataTable />;
+
+served.story = {
+  name: 'Served',
+};
+
+export const controlled = () => <ControlledDataTable />;
+
+controlled.story = {
+  name: 'Controlled',
+};

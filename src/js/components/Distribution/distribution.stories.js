@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Distribution, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -25,4 +24,12 @@ const SimpleDistribution = () => (
   </Grommet>
 );
 
-storiesOf('Distribution', module).add('Simple', () => <SimpleDistribution />);
+export default {
+  title: 'Distribution',
+};
+
+export const simple = () => <SimpleDistribution />;
+
+simple.story = {
+  name: 'Simple',
+};

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -98,19 +97,51 @@ const GridInfiniteScroll = () => (
   </Grommet>
 );
 
-storiesOf('InfiniteScroll', module)
-  .add('Simple', () => <SimpleInfiniteScroll />)
-  .add('Show 118th item', () => <SimpleInfiniteScroll show={117} />)
-  .add('Marker', () => (
-    <SimpleInfiniteScroll
-      renderMarker={marker => (
-        <Box pad="medium" background="accent-1">
-          {marker}
-        </Box>
-      )}
-    />
-  ))
-  .add('Replace', () => <SimpleInfiniteScroll replace />)
-  .add('onMore', () => <LazyInfiniteScroll />)
-  .add('Class Children', () => <ClassChildrenInfiniteScroll />)
-  .add('Grid', () => <GridInfiniteScroll />);
+export default {
+  title: 'InfiniteScroll',
+};
+
+export const simple = () => <SimpleInfiniteScroll />;
+
+simple.story = {
+  name: 'Simple',
+};
+
+export const show118thItem = () => <SimpleInfiniteScroll show={117} />;
+
+show118thItem.story = {
+  name: 'Show 118th item',
+};
+
+export const markerStory = () => (
+  <SimpleInfiniteScroll
+    renderMarker={marker => (
+      <Box pad="medium" background="accent-1">
+        {marker}
+      </Box>
+    )}
+  />
+);
+
+markerStory.story = {
+  name: 'Marker',
+};
+
+export const replace = () => <SimpleInfiniteScroll replace />;
+
+replace.story = {
+  name: 'Replace',
+};
+
+export const onMore = () => <LazyInfiniteScroll />;
+export const classChildren = () => <ClassChildrenInfiniteScroll />;
+
+classChildren.story = {
+  name: 'Class Children',
+};
+
+export const grid = () => <GridInfiniteScroll />;
+
+grid.story = {
+  name: 'Grid',
+};

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { grommet } from 'grommet/themes';
 import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
 
@@ -16,7 +15,7 @@ class Announcer extends Component {
     message: 'Here is a simple announcement. This will soon disappear',
     mode: 'polite',
     role: 'log',
-  }
+  };
 
   componentDidMount() {
     const { announce, message, mode } = this.props;
@@ -36,12 +35,7 @@ class Announcer extends Component {
 
 const AnnounceContextComponent = props => (
   <Grommet theme={grommet} full>
-    <Box
-      justify="center"
-      align="center"
-      background="brand"
-      fill
-    >
+    <Box justify="center" align="center" background="brand" fill>
       <Heading>Welcome to announcement section</Heading>
       <AnnounceContext.Consumer>
         {announce => <Announcer announce={announce} {...props} />}
@@ -50,12 +44,24 @@ const AnnounceContextComponent = props => (
   </Grommet>
 );
 
-storiesOf('AnnounceContext', module)
-  .add('Polite', () => <AnnounceContextComponent />)
-  .add('Assertive', () => (
-    <AnnounceContextComponent
-      message="Turn on Accessibility feature to listen to this announcement. This will soon disappear"
-      mode="assertive"
-      role="alert"
-    />
-  ));
+export default {
+  title: 'AnnounceContext',
+};
+
+export const polite = () => <AnnounceContextComponent />;
+
+polite.story = {
+  name: 'Polite',
+};
+
+export const assertive = () => (
+  <AnnounceContextComponent
+    message="Turn on Accessibility feature to listen to this announcement. This will soon disappear"
+    mode="assertive"
+    role="alert"
+  />
+);
+
+assertive.story = {
+  name: 'Assertive',
+};

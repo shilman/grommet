@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Text, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -47,7 +46,24 @@ const WordBreak = () => (
   </Grommet>
 );
 
-storiesOf('Text', module)
-  .add('All', () => <All />)
-  .add('Color', () => <Color />)
-  .add('Word Break', () => <WordBreak />);
+export default {
+  title: 'Text',
+};
+
+export const all = () => <All />;
+
+all.story = {
+  name: 'All',
+};
+
+export const color = () => <Color />;
+
+color.story = {
+  name: 'Color',
+};
+
+export const wordBreak = () => <WordBreak />;
+
+wordBreak.story = {
+  name: 'Word Break',
+};

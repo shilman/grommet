@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RadioButtonGroup } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -34,6 +33,12 @@ class SimpleRadioButtonGroup extends Component {
   }
 }
 
-storiesOf('RadioButtonGroup', module).add('Simple', () => (
-  <SimpleRadioButtonGroup />
-));
+export default {
+  title: 'RadioButtonGroup',
+};
+
+export const simple = () => <SimpleRadioButtonGroup />;
+
+simple.story = {
+  name: 'Simple',
+};

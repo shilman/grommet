@@ -1,4 +1,4 @@
-import { create } from '@storybook/theming/create';
+import { create } from 'storybook/theming/create';
 
 // https://storybook.js.org/docs/configurations/theming/
 

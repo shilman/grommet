@@ -88,6 +88,7 @@ export const decorators = [
 
 export const parameters = {
   layout: 'fullscreen',
+
   options: {
     storySort: (first, second) => {
       /**
@@ -112,6 +113,10 @@ export const parameters = {
         ? 0
         : first.id.localeCompare(second.id, undefined, { numeric: true });
     },
+  },
+
+  docs: {
+    codePanel: true,
   },
 };
 

@@ -1,17 +1,9 @@
 module.exports = {
   addons: [
-    '@storybook/addon-toolbars',
-    {
-      name: '@storybook/addon-storysource',
-      options: {
-        loaderOptions: {
-          injectStoryParameters: false,
-        },
-      },
-    },
     '@storybook/addon-a11y',
     '@storybook/addon-webpack5-compiler-babel',
     '@chromatic-com/storybook',
+    '@storybook/addon-docs',
   ],
   stories: [
     '../src/js/all/**/stories/*.stories.@(ts|tsx|js|jsx)',
